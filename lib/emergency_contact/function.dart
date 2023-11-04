@@ -232,7 +232,7 @@ class _emergency_cntState extends State<emergency_cnt> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView(padding: const EdgeInsets.all(22.0), children: [
+      child: ListView(children: [
         if (name1 != "" && name1 != 'null') ...[
           Container(
             child: emergencyContactTile(name1, number1, email1, 1),

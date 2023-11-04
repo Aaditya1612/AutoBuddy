@@ -130,22 +130,28 @@ class _HomePageViewState extends State<HomePageView> {
     return Scaffold(
       backgroundColor: Color.fromARGB(100, 0, 0, 255),
       appBar: GlobalAppBar().show("AutoBuddy", ""),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 50,
-          ),
-          Text(
-            "Choose your emergency contacts",
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                wordSpacing: 2,
-                fontWeight: FontWeight.w500),
-          ),
-          emergency_cnt(),
-          ServiceActivator(cameras: cameras, sms_sender: false)
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            ServiceActivator(cameras: cameras, sms_sender: false),
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              "Choose your emergency contacts",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  wordSpacing: 2,
+                  fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            emergency_cnt(),
+          ],
+        ),
       ),
     );
   }

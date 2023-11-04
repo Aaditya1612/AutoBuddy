@@ -343,22 +343,44 @@ class _ServiceActivatorState extends State<ServiceActivator> {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () async {
-        await _getPermission();
-        _setupSpeechRecognition();
-      },
-      child: Icon(Icons.menu),
-      style: ButtonStyle(
-        shape: MaterialStateProperty.all(CircleBorder()),
-        padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-        backgroundColor:
-            MaterialStateProperty.all(Colors.blue), // <-- Button color
-        overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
-          if (states.contains(MaterialState.pressed))
-            return Colors.red; // <-- Splash color
-        }),
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        ElevatedButton(
+          onPressed: () async {
+            await _getPermission();
+            _setupSpeechRecognition();
+          },
+          child: Icon(Icons.shield),
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all(CircleBorder()),
+            padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+            backgroundColor:
+                MaterialStateProperty.all(Colors.blue), // <-- Button color
+            overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
+              if (states.contains(MaterialState.pressed))
+                return Colors.red; // <-- Splash color
+            }),
+          ),
+        ),
+        SizedBox(
+          width: 150,
+          height: 50,
+          child: ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.red.shade800)),
+              onPressed: () async {
+                await fetchLocation();
+                await _sendEmailToCommunity();
+                _sendMessage(
+                    "+918638332396",
+                    """Need help My Location is https://www.google.com/maps/place/$latitude+$longitude""",
+                    1);
+              },
+              child: Text("Manual SOS!")),
+        )
+      ],
     );
   }
 
