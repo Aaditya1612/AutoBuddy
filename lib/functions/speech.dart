@@ -110,7 +110,6 @@ class _ServiceActivatorState extends State<ServiceActivator> {
 
   // This FUNCTION IS FOR THE APP PROMPT
   void startTimer() async {
-    audioPlayer.play(AssetSource('safety.mp3'));
     _triggerVibration();
     showDialog(
         context: context,

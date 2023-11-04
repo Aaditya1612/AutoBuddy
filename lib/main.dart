@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "AutoBuddy",
+      debugShowCheckedModeBanner: false,
       home: SignUpPage(),
       routes: {HomePageView.routeName: (cntx) => const HomePageView()},
     );
