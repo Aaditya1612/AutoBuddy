@@ -52,6 +52,7 @@ class _ServiceActivatorState extends State<ServiceActivator> {
   late String userName;
   bool langLoad = false;
   String lang = "";
+  bool isActive = false;
 
   // This function ask for Permissions and give status of it
   void _setupSpeechRecognition() async {
@@ -349,17 +350,17 @@ class _ServiceActivatorState extends State<ServiceActivator> {
           onPressed: () async {
             await _getPermission();
             _setupSpeechRecognition();
+            setState(() {
+              isActive = !isActive;
+            });
           },
           child: Icon(Icons.shield),
           style: ButtonStyle(
             shape: MaterialStateProperty.all(CircleBorder()),
             padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-            backgroundColor:
-                MaterialStateProperty.all(Colors.blue), // <-- Button color
-            overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
-              if (states.contains(MaterialState.pressed))
-                return Colors.red; // <-- Splash color
-            }),
+            backgroundColor: (isActive)
+                ? MaterialStateProperty.all(Colors.green.shade400)
+                : MaterialStateProperty.all(Colors.blue), // <-- Button color
           ),
         ),
         SizedBox(
