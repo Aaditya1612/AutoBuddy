@@ -22,13 +22,18 @@ We are aware that false triggers may happen and for that, we have implemented a 
 
 ### After the successful detection of a threat, our app concurrently starts the following activities:
 **1. Sending SMS**: The user can add their relatives' and friends' contact details on which a customized SMS is sent with an embedded link redirecting to the victim's location on Google Maps. 
+
 **2. E-Mail to nearby users:** All the other users of our app who are within a radius of 2 KM from the victim are sent an Email containing the location of the victim so that someone from nearby can reach out to help as soon as possible.
+
 **3. The location of the last active SOS alert** is stored inside our database for future reference.
 
 ## Future Goals:
 **1. Video Recording of incident:** We are working on implementing a method that can automatically start recording from one of the cameras of the device and send that video to the Email of emergency contacts giving a possibility of some clues and proof.
+
 **2. Route Mapping:** The routes with more number of incidents and most frequent incidents will be highlighted on the map.
+
 **3. Offline Detection**: We have planned to automatically use a threshold pitch value when speech detection is not possible for the detection of a threat.
+
 **4. Bluetooth Message Sending:** In case of unavailability of the network, Bluetooth can be used to send prompts to nearby open devices.
 
 
