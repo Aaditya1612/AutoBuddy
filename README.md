@@ -1,5 +1,7 @@
   # AutoBuddy
 
+  Made with ❤️ in HackCBS Hackathon using Flutter 🦾
+
 ## Problem Statement
 The current landscape of personal safety solutions often requires active user interaction for implementation and use cases. This reliance on manual input can be limiting and may not adequately address situations that require immediate and autonomous responses. Instances such as walking alone at night, accidents, medical emergencies, harassment, and unfamiliar environments demand a more seamless and proactive approach. Our solution distinguishes itself by offering a hands-free and autonomous system, providing users with a comprehensive safety net while still offering manual options for diverse situations. This innovation marks a significant advancement in personal safety technology.
 
