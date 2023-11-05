@@ -30,6 +30,7 @@ class _SignUpPageState extends State<SignUpPage> {
   String phone = "";
   String pswd = "";
 
+  bool isLoading1 = false;
   bool isLoading = false;
   @override
   Widget build(BuildContext context) {
@@ -113,15 +114,32 @@ class _SignUpPageState extends State<SignUpPage> {
                         const SizedBox(
                           height: 25,
                         ),
-                        customElevatedButton(
-                            isLoading: isLoading,
-                            onPressed: () async {
-                              await googleservice().signUpWithGoogle(
-                                  _fname.text, _lname.text, _phone.text);
-                              Navigator.popAndPushNamed(
-                                  context, HomePageView.routeName);
-                            },
-                            title: "Authenticate with Google"),
+                        Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: SizedBox(
+                              width: double.infinity,
+                              height: 45,
+                              child: ElevatedButton(
+                                style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all(Colors.pink)),
+                                onPressed: () async {
+                                  setState(() {
+                                    isLoading1 = !isLoading1;
+                                  });
+                                  await googleservice().signUpWithGoogle(
+                                      _fname.text, _lname.text, _phone.text);
+                                  Navigator.popAndPushNamed(
+                                      context, HomePageView.routeName);
+                                },
+                                child: !isLoading1
+                                    ? Text(
+                                        "Authenticate with Google",
+                                      )
+                                    : const CircularProgressIndicator(
+                                        color: Colors.white),
+                              ),
+                            )),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
