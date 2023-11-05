@@ -36,11 +36,14 @@ We are aware that false triggers may happen and for that, we have implemented a 
     <td><img src = "https://github.com/Aaditya1612/autobuddy/blob/main/screenshots/s7.jpg"/></td>
     <td><img src = "https://github.com/Aaditya1612/autobuddy/blob/main/screenshots/s6.jpg/"></td>
     <td><img src="https://github.com/Aaditya1612/autobuddy/blob/main/screenshots/s5.jpg"/></td>
-    <td><img src="https://github.com/Aaditya1612/autobuddy/blob/main/screenshots/s10.jpg"/></td>
+    <td><img src="https://github.com/Aaditya1612/autobuddy/blob/main/screenshots/s10.jpg"/></td
+                                                                                             </tr>
+  <tr>
     <td><img src="https://github.com/Aaditya1612/autobuddy/blob/main/screenshots/s9.jpg"/></td>
     <td><img src="https://github.com/Aaditya1612/autobuddy/blob/main/screenshots/s2.jpg"/></td>
     <td><img src="https://github.com/Aaditya1612/autobuddy/blob/main/screenshots/s3.jpg"/></td>
     <td><img src="https://github.com/Aaditya1612/autobuddy/blob/main/screenshots/s1.jpg"/></td>
+    <td><img src="https://github.com/Aaditya1612/autobuddy/blob/main/screenshots/s12.jpg"/></td>
   </tr>
 </table>
 
